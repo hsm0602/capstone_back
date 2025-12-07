@@ -23,23 +23,36 @@ capstone/
 
 ## 사용 설명(팀 인원용)
 - fastapi 서버 실행
+
 가상환경 켜기: capstone 디렉토리에서 source venv/bin/activate 입력
+
 uvicorn main:app --reload --port 8000 --host 0.0.0.0 입력 -> fastapi 실행.
+
 swagger: 129.154.56.222:8000/docs
 
 - fastapi 실행중인 서버 프로세스 강제 종료(이전에 예상치 못한 종료로 인해 서버가 죽어있을 수 있음)
+
 sudo lsof -i :8000 해서 나오는 프로세스 sudo kill -9 PID
 
 
 - 데이터베이스 접근 방법
+
 터미널에서 ssh SM 하고
+
 mysql -u capstone -p 입력
+
 0602 입력
+
 show databases;
+
 use capstonedb;
+
 show tables;
 
+
 - 데이터베이스 테이블 drop, create
+
 python3 -m db_work.reset_tables 입력
 - 데이터베이스 테이블 drop, create + 기본 데이터 삽입
+
 python3 -m db_work.reset_and_seed 입력
